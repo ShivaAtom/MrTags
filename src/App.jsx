@@ -1,6 +1,11 @@
+import { BarSection } from "./Components/BarSection"
+import { SectionInfo } from "./Components/SectionInfo"
 const App = () => {
   return (
-    <div>App</div>
+    <section className="bg-black h-screen w-full flex p-2 gap-2">
+      <BarSection/>
+      <SectionInfo/>
+    </section>
   )
 }
 
