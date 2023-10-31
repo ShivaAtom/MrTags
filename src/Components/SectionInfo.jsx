@@ -1,13 +1,23 @@
 import {Cards} from "./ComponentsS/Cards.jsx"
-import {GlobalContext} from "../Context/GlobalContext.jsx"
-import { DefaultContext } from "../Context/DefaultContext.jsx"
+import { Float } from "./ComponentsS/Float.jsx"
+import {Context} from "../Context/Context.jsx"
+import { useState } from "react"
 
 export const SectionInfo = () => {
+  const [post, setPost]=useState([
+    {
+      id:0,
+      titulo:"",
+      txt:""
+    }
+  ])
+
   return (
     <section className="bg-white flex-1 rounded-lg p-2 flex">
-      <GlobalContext.Provider value={DefaultContext}>
-        <Cards/>
-      </GlobalContext.Provider>
+     <Context.Provider value={{post, setPost}}>
+      <Cards/>
+      <Float/>
+     </Context.Provider>
     </section>
   )
 }
